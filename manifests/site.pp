@@ -116,9 +116,12 @@ if ! $::osfamily {
 case $::osfamily {
     # Supported Linux OS families
     RedHat: {
-        include cspace_server_dependencies
-        include cspace_java
-        include cspace_tarball
+        class { 'cspace_server_dependencies': }
+		->
+        class { 'cspace_java': }
+		->
+        class { 'cspace_tarball': }
+		->
         class { 'cspace_source':
             env_vars   => $cspace_env_vars,
             exec_paths => $linux_default_exec_paths
@@ -138,7 +141,8 @@ case $::osfamily {
     }
     # OS X
     darwin: {
-		# include cspace_tarball
+		# class { 'cspace_tarball': }
+		# ->
         class { 'cspace_source':
             env_vars   => $cspace_env_vars,
             exec_paths => $osx_default_exec_paths
