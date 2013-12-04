@@ -117,7 +117,7 @@ case $::osfamily {
     # Supported Linux OS families
     RedHat: {
         include cspace_server_dependencies
-        # include cspace_java
+        include cspace_java
         include cspace_tarball
         class { 'cspace_source':
             env_vars   => $cspace_env_vars,
@@ -126,7 +126,7 @@ case $::osfamily {
     }
     Debian: {
         include cspace_server_dependencies
-        # include cspace_java
+        include cspace_java
         include cspace_tarball
         class { 'cspace_source':
             env_vars   => $cspace_env_vars,
