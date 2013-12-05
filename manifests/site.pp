@@ -210,7 +210,7 @@ if ! $::osfamily {
 # (We can add resources to be instantiated to each OS family, as
 # they've been tested under at least one instance of that family.)
 
-case $::osfamily {
+case $osfamily {
     # Supported Linux OS families
     RedHat: {
         class { 'cspace_server_dependencies': }
