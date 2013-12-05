@@ -5,6 +5,10 @@
 # Required for the array 'concat()' function used below.
 include stdlib
 
+# FIXME: Move much of the following environment-related
+# code to the 'cspace_environment' module. (After doing so,
+# we can also delete lib/facter/env.rb from this module.)
+
 # ---------------------------------------------------------
 # Declare environment variables
 # ---------------------------------------------------------
