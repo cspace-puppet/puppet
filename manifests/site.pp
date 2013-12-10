@@ -24,42 +24,42 @@ $linux_exec_paths = $cspace_environment::execpaths::linux_default_exec_paths
 $osx_exec_paths = $cspace_environment::execpaths::osx_default_exec_paths
 
 case $os_family {
-    # Supported Linux OS families
-    RedHat: {
-        class { 'cspace_server_dependencies': }
-		->
-        class { 'cspace_java': }
-		->
-        class { 'cspace_tarball': }
-		->
-        class { 'cspace_source':
-            env_vars   => $cspace_env_vars,
-            exec_paths => $linux_exec_paths
-        }
+  # Supported Linux OS families
+  RedHat: {
+    class { 'cspace_server_dependencies': }
+    ->
+    class { 'cspace_java': }
+    ->
+    class { 'cspace_tarball': }
+    ->
+    class { 'cspace_source':
+      env_vars   => $cspace_env_vars,
+      exec_paths => $linux_exec_paths
     }
-    Debian: {
-        class { 'cspace_server_dependencies': }
-		->
-        class { 'cspace_java': }
-		->
-        class { 'cspace_tarball': }
-		->
-        class { 'cspace_source':
-            env_vars   => $cspace_env_vars,
-            exec_paths => $linux_exec_paths
-        }
+  }
+  Debian: {
+    class { 'cspace_server_dependencies': }
+    ->
+    class { 'cspace_java': }
+    ->
+    class { 'cspace_tarball': }
+    ->
+    class { 'cspace_source':
+      env_vars   => $cspace_env_vars,
+      exec_paths => $linux_exec_paths
     }
-    # OS X
-    darwin: {
-		# class { 'cspace_tarball': }
-		# ->
-        class { 'cspace_source':
-            env_vars   => $cspace_env_vars,
-            exec_paths => $osx_exec_paths
-        }
+  }
+  # OS X
+  darwin: {
+    # class { 'cspace_tarball': }
+    # ->
+    class { 'cspace_source':
+      env_vars   => $cspace_env_vars,
+      exec_paths => $osx_exec_paths
     }
-    default: {
-    }
+  }
+  default: {
+  }
 }
 
 
