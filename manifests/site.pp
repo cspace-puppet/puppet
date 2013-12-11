@@ -24,6 +24,7 @@ $linux_exec_paths = $cspace_environment::execpaths::linux_default_exec_paths
 $osx_exec_paths = $cspace_environment::execpaths::osx_default_exec_paths
 
 case $os_family {
+  
   # Supported Linux OS families
   RedHat: {
     class { 'cspace_server_dependencies': }
@@ -49,17 +50,24 @@ case $os_family {
       exec_paths => $linux_exec_paths
     }
   }
+  
   # OS X
   darwin: {
-    # class { 'cspace_tarball': }
-    # ->
+    class { 'cspace_tarball': }
+    ->
     class { 'cspace_source':
       env_vars   => $cspace_env_vars,
       exec_paths => $osx_exec_paths
     }
   }
+  
+  # Microsoft Windows
+  windows: {
+  }
+  
   default: {
   }
+  
 }
 
 
