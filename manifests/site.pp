@@ -31,6 +31,8 @@ case $os_family {
     ->
     class { 'cspace_java': }
     ->
+    # class { 'cspace_postgresql_server': }
+    # ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
@@ -43,6 +45,8 @@ case $os_family {
     ->
     class { 'cspace_java': }
     ->
+    # class { 'cspace_postgresql_server': }
+    # ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
@@ -53,6 +57,12 @@ case $os_family {
   
   # OS X
   darwin: {
+    # class { 'cspace_server_dependencies': }
+    # ->
+    # class { 'cspace_java': }
+    # ->
+    # class { 'cspace_postgresql_server': }
+    # ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
@@ -63,6 +73,15 @@ case $os_family {
   
   # Microsoft Windows
   windows: {
+    # class { 'cspace_server_dependencies': }
+    # ->
+    # class { 'cspace_java': }
+    # ->
+    # class { 'cspace_postgresql_server': }
+    # ->
+    # class { 'cspace_tarball': }
+    # ->
+    # class { 'cspace_source': }
   }
   
   default: {
