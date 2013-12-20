@@ -38,15 +38,15 @@ case $os_family {
     class { 'cspace_java': 
       require => Class[ 'cspace_server_dependencies' ]
     }
-    class { 'cspace_postgresql_server': }
+    class { 'cspace_postgresql_server':
       require => Class[ 'cspace_java' ]
     }
-    class { 'cspace_tarball': }
+    class { 'cspace_tarball':
       require => Class[ 'cspace_java' ]
     }
     class { 'cspace_source':
       env_vars   => $cspace_env_vars,
-      exec_paths => $linux_exec_paths
+      exec_paths => $linux_exec_paths,
       require => Class[ 'cspace_tarball' ]
     }
   }
