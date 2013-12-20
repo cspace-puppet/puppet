@@ -31,8 +31,8 @@ case $os_family {
     ->
     class { 'cspace_java': }
     ->
-    # class { 'cspace_postgresql_server': }
-    # ->
+    class { 'cspace_postgresql_server': }
+    ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
