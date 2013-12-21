@@ -11,7 +11,6 @@ include postgresql::client
 include postgresql::globals
 include postgresql::server
 include stdlib
-include vcsrepo
 
 # ---------------------------------------------------------
 # Instantiate resources for creating or maintaining a
@@ -47,7 +46,7 @@ case $os_family {
     class { 'cspace_source':
       env_vars   => $cspace_env_vars,
       exec_paths => $linux_exec_paths,
-      require => Class[ 'cspace_tarball' ]
+      require    => Class[ 'cspace_tarball' ]
     }
   }
   Debian: {
