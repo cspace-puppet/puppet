@@ -3,7 +3,9 @@
 #
 
 include cspace_environment::env
+include cspace_environment::execpaths
 include cspace_environment::osfamily
+include cspace_environment::tempdir
 
 # ---------------------------------------------------------
 # Instantiate resources for creating or maintaining a
