@@ -2,7 +2,10 @@
 # A puppet site file for a CollectionSpace server
 #
 
+include cspace_environment::execpaths
+include cspace_environment::osbits
 include cspace_environment::osfamily
+include cspace_environment::tempdir
 
 # ---------------------------------------------------------
 # Instantiate resources for creating or maintaining a
