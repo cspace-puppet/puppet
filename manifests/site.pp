@@ -2,11 +2,7 @@
 # A puppet site file for a CollectionSpace server
 #
 
-include cspace_environment::env
-include cspace_environment::execpaths
-include cspace_environment::osbits
 include cspace_environment::osfamily
-include cspace_environment::tempdir
 
 # ---------------------------------------------------------
 # Instantiate resources for creating or maintaining a
@@ -20,9 +16,6 @@ include cspace_environment::tempdir
 # as they've been tested under at least one instance of that family.)
 
 $os_family = $cspace_environment::osfamily::os_family
-$cspace_env_vars = $cspace_environment::env::cspace_env_vars
-$linux_exec_paths = $cspace_environment::execpaths::linux_default_exec_paths
-$osx_exec_paths = $cspace_environment::execpaths::osx_default_exec_paths
 
 case $os_family {
   
@@ -39,9 +32,6 @@ case $os_family {
     class { 'cspace_tarball':
     } ->
     class { 'cspace_source':
-      env_vars   => $cspace_env_vars,
-      exec_paths => $linux_exec_paths,
-      require    => Class[ 'cspace_tarball' ]
     }
   }
   
@@ -58,8 +48,6 @@ case $os_family {
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
-      env_vars   => $cspace_env_vars,
-      exec_paths => $osx_exec_paths
     }
   }
   
