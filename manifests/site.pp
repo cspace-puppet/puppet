@@ -7,6 +7,7 @@ include cspace_environment::execpaths
 include cspace_environment::osbits
 include cspace_environment::osfamily
 include cspace_environment::tempdir
+include cspace_user::user
 
 # ---------------------------------------------------------
 # Instantiate resources for creating or maintaining a
@@ -32,7 +33,7 @@ case $os_family {
     } ->
     class { 'cspace_java': 
     } ->
-    class { 'cspace_user':
+    class { 'cspace_user::user':
     } ->
     class { 'cspace_postgresql_server':
     } ->
@@ -51,7 +52,7 @@ case $os_family {
     # ->
     # class { 'cspace_java': }
     # ->
-    class { 'cspace_user':
+    class { 'cspace_user::user':
     } ->
     # class { 'cspace_postgresql_server': }
     # ->
@@ -69,6 +70,8 @@ case $os_family {
     # ->
     # class { 'cspace_java': }
     # ->
+    # class { 'cspace_user::user':
+    # } ->
     # class { 'cspace_postgresql_server': }
     # ->
     # class { 'cspace_tarball': }
