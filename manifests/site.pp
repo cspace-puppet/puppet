@@ -32,6 +32,10 @@ case $os_family {
     } ->
     class { 'cspace_postgresql_server':
     } ->
+    class { 'cspace_tarball::globals':
+      # Uncomment line below to set release version; defaults to '4.0'
+      # release_version => "4.0"
+    } ->
     class { 'cspace_tarball':
     } ->
     class { 'cspace_source':
@@ -48,6 +52,10 @@ case $os_family {
     } ->
     # class { 'cspace_postgresql_server': }
     # ->
+    class { 'cspace_tarball::globals':
+      # Uncomment line below to set release version; defaults to '4.0'
+      # release_version => "4.0"
+    } ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
@@ -64,6 +72,10 @@ case $os_family {
     # } ->
     # class { 'cspace_postgresql_server': }
     # ->
+    # class { 'cspace_tarball::globals':
+    #   # Uncomment line below to set release version; defaults to '4.0'
+    #   # release_version => "4.0"
+    # } ->
     # class { 'cspace_tarball': }
     # ->
     # class { 'cspace_source': }
