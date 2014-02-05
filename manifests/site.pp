@@ -27,23 +27,9 @@ case $os_family {
     class { 'cspace_server_dependencies': 
     } ->
     class { 'cspace_java': 
-    } ->
-    class { 'cspace_user::user':
-    } ->
-    class { 'cspace_postgresql_server':
-    } ->
-    class { 'cspace_tarball::globals':
-      # Uncomment line below to set release version; defaults to '4.0'
-      # release_version => "4.0"
-    } ->
-    class { 'cspace_tarball':
-    } ->
-    class { 'cspace_source':
-      # Temporary override of the current version; e.g. v4.0, due to
-      # http://issues.collectionspace.org/browse/CSPACE-6294
-      # The (v4.1) master branch will soon contain fixes for that issue.
-      source_code_revision => 'master',
     }
+    # Remaining classes in the installation sequence here have been moved
+    # to the 'post-java.pp' manifest
   }
   
   # OS X
@@ -51,23 +37,8 @@ case $os_family {
     # class { 'cspace_server_dependencies': }
     # ->
     # class { 'cspace_java': }
-    # ->
-    class { 'cspace_user::user':
-    } ->
-    # class { 'cspace_postgresql_server': }
-    # ->
-    class { 'cspace_tarball::globals':
-      # Uncomment line below to set release version; defaults to '4.0'
-      # release_version => "4.0"
-    } ->
-    class { 'cspace_tarball': }
-    ->
-    class { 'cspace_source':
-      # Temporary override of the current version; e.g. v4.0, due to
-      # http://issues.collectionspace.org/browse/CSPACE-6294
-      # The (v4.1) master branch will soon contain fixes for that issue.
-      source_code_revision => 'master',
-    }
+    # Remaining classes in the installation sequence here have been moved
+    # to the 'post-java.pp' manifest
   }
   
   # Microsoft Windows
@@ -75,18 +46,8 @@ case $os_family {
     # class { 'cspace_server_dependencies': }
     # ->
     # class { 'cspace_java': }
-    # ->
-    # class { 'cspace_user::user':
-    # } ->
-    # class { 'cspace_postgresql_server': }
-    # ->
-    # class { 'cspace_tarball::globals':
-    #   # Uncomment line below to set release version; defaults to '4.0'
-    #   # release_version => "4.0"
-    # } ->
-    # class { 'cspace_tarball': }
-    # ->
-    # class { 'cspace_source': }
+    # Remaining classes in the installation sequence here have been moved
+    # to the 'post-java.pp' manifest
   }
   
   default: {
