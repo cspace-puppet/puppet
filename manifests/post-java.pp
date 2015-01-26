@@ -37,8 +37,11 @@ case $os_family {
     class { 'cspace_tarball':
     } ->
     class { 'cspace_source':
-      # Uncomment line below to set source code version to a specified value; e.g.
-      # source_code_revision => 'master',
+      # Uncomment a line below to set source code rev(ision) to a specified value
+      # for a branch, tag, or commit; e.g.
+      # source_code_rev => 'master',
+      # or
+      # source_code_rev => 'v4.1.1',
     }
   }
   
