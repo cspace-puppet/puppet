@@ -31,17 +31,14 @@ case $os_family {
     class { 'cspace_postgresql_server':
     } ->
     class { 'cspace_tarball::globals':
-      # Uncomment line below to set release version to a value other than
-      # its current default value, '4.0'
-      # release_version => "4.0"
+      # Uncomment line below to set tarball release version to a specified value; e.g.
+      # release_version => "4.1"
     } ->
     class { 'cspace_tarball':
     } ->
     class { 'cspace_source':
-      # Temporary override of the current version; e.g. v4.0, due to
-      # http://issues.collectionspace.org/browse/CSPACE-6294
-      # The (v4.1) master branch contains fixes for that issue.
-      source_code_revision => 'master',
+      # Uncomment line below to set source code version to a specified value; e.g.
+      # source_code_revision => 'master',
     }
   }
   
