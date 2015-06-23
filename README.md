@@ -1,7 +1,8 @@
 puppet
 ======
 
-A module containing a `site.pp` file for a CollectionSpace instance.
+A module containing a `site.pp` file to initiate the installation of a
+CollectionSpace server instance.
 
 Specifically, an installer shell script, which is in turn installed by
 a bootstrap script (see the `cspace-puppet/cspace_puppet_bootstrap` repo),
