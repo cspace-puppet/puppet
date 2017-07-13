@@ -32,7 +32,7 @@ case $os_family {
     } ->
     class { 'cspace_tarball::globals':
       # Uncomment line below to explicitly set tarball release version; e.g.
-      # release_version => "4.4"
+      release_version => "4.5"
     } ->
     class { 'cspace_tarball':
     } ->
@@ -41,7 +41,7 @@ case $os_family {
       # for a branch, tag, or commit; e.g.
       # source_code_rev => 'master',
       # or
-      # source_code_rev => 'v4.4-branch',
+      source_code_rev => 'v4.5-branch',
     }
   }
   
@@ -56,15 +56,15 @@ case $os_family {
     class { 'cspace_tarball::globals':
       # Uncomment line below to set release version to a value other than
       # its current default value.
-      # release_version => "4.4"
+      release_version => "4.5"
     } ->
     class { 'cspace_tarball': }
     ->
     class { 'cspace_source':
-      # Temporary override of the current version; e.g. v4.4, due to
+      # Temporary override of the current version; e.g. v4.5, due to
       # http://issues.collectionspace.org/browse/CSPACE-6294
-      # The (v4.4) master branch contains fixes for that issue.
-      # source_code_rev => 'v4.4-branch',
+      # The (v4.5) master branch contains fixes for that issue.
+      source_code_rev => 'v4.5-branch',
     }
   }
   
@@ -77,8 +77,8 @@ case $os_family {
     # class { 'cspace_postgresql_server': }
     # ->
     # class { 'cspace_tarball::globals':
-    #   # Uncomment line below to set release version; defaults to '4.4'
-    #   # release_version => "4.4"
+    #   # Uncomment line below to set release version; defaults to '4.5'
+    #   # release_version => "4.5"
     # } ->
     # class { 'cspace_tarball': }
     # ->
