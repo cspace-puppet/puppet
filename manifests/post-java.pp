@@ -21,9 +21,9 @@ include cspace_environment::tempdir
 $os_family = $cspace_environment::osfamily::os_family
 
 case $os_family {
-  
+
   # Supported Linux OS families
-  RedHat, Debian: {
+  'RedHat', 'Debian': {
     # Continuation here from earlier classes in the installation sequence,
     # maintained in the 'site.pp' manifest.
     class { 'cspace_user::user':
@@ -44,9 +44,9 @@ case $os_family {
       # source_code_rev => 'v5.x-branch',
     }
   }
-  
+
   # OS X
-  darwin: {
+  'darwin': {
     # Continuation here from earlier classes in the installation sequence,
     # maintained in the 'site.pp' manifest.
     class { 'cspace_user::user':
@@ -67,9 +67,9 @@ case $os_family {
       # source_code_rev => 'v5.x-branch',
     }
   }
-  
+
   # Microsoft Windows
-  windows: {
+  'windows': {
     # Continuation here from earlier classes in the installation sequence,
     # maintained in the 'site.pp' manifest.
     # class { 'cspace_user::user':
@@ -84,10 +84,10 @@ case $os_family {
     # ->
     # class { 'cspace_source': }
   }
-  
-  default: {
+
+  'default': {
   }
-  
+
 }
 
 

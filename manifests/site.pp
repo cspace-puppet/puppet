@@ -21,38 +21,38 @@ include cspace_environment::tempdir
 $os_family = $cspace_environment::osfamily::os_family
 
 case $os_family {
-  
+
   # Supported Linux OS families
-  RedHat, Debian: {
-    class { 'cspace_server_dependencies': 
+  'RedHat', 'Debian': {
+    class { 'cspace_server_dependencies':
     } ->
-    class { 'cspace_java': 
+    class { 'cspace_java':
     }
     # Remaining classes in the installation sequence here have been moved
     # to the 'post-java.pp' manifest
   }
-  
+
   # OS X
-  darwin: {
+  'darwin': {
     # class { 'cspace_server_dependencies': }
     # ->
     # class { 'cspace_java': }
     # Remaining classes in the installation sequence here have been moved
     # to the 'post-java.pp' manifest
   }
-  
+
   # Microsoft Windows
-  windows: {
+  'windows': {
     # class { 'cspace_server_dependencies': }
     # ->
     # class { 'cspace_java': }
     # Remaining classes in the installation sequence here have been moved
     # to the 'post-java.pp' manifest
   }
-  
-  default: {
+
+  'default': {
   }
-  
+
 }
 
 
